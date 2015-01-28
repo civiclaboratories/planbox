@@ -1,7 +1,7 @@
 # Planbox
 
-[![Build Status](https://travis-ci.org/openplans/planbox.png?branch=staging)](https://travis-ci.org/openplans/planbox)
-[![Requirements Status](https://requires.io/github/openplans/planbox/requirements.png?branch=staging)](https://requires.io/github/openplans/planbox/requirements/?branch=staging)
+[![Build Status](https://travis-ci.org/civiclaboratories/planbox.png?branch=staging)](https://travis-ci.org/openplans/planbox)
+[![Requirements Status](https://requires.io/github/civiclaboratories/planbox/requirements.png?branch=staging)](https://requires.io/github/openplans/planbox/requirements/?branch=staging)
 
 Planbox is a platform for getting the word out about your planning projects.
 Its beautiful and easy to use interface will help you get your project online
