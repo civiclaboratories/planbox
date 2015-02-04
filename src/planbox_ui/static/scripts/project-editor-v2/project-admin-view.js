@@ -331,6 +331,7 @@ var Planbox = Planbox || {};
           });
         };
 
+        this.ui.saveBtn.addClass('disabled');
         NS.Utils.runHook(NS.app.plugins, 'presave', {done: _saveModel, args: [self.model]});
       },
       handleSave: function(evt) {

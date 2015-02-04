@@ -117,11 +117,17 @@ def create_dataset(request):
 
     # Check that we were successful in creating the dataset.
     if ds_response.status_code == 201:
+        ds_url = ds_response.json()['url']
+
+        # Set CORS permissions on the dataset.
+        success = add_dataset_permissions(ds_url, request.META['HTTP_HOST'], planbox_auth)
+        if not success:
+            return HttpResponse(json.dumps({'errors': 'Failed to add access permissions on the dataset.'}))
+
         # Return the dataset URL as well as a signature that we'll use later
         # when we authorize the user to access the Shareabouts API as the
         # dataset's owner.
         signer = Signer(salt='shareabouts')
-        ds_url = ds_response.json()['url']
         return HttpResponse(
             json.dumps({
                 'dataset_url': ds_url,
@@ -130,15 +136,31 @@ def create_dataset(request):
             content_type='application/json')
 
     elif ds_response.status_code < 500:
+        client.captureMessage('Failed to create a dataset with Shareabouts API response %s %s' % (ds_response.status_code, ds_response.content))
         return HttpResponse(ds_response.content,
             status=ds_response.status_code,
             content_type='application/json')
 
     else:
+        client.captureMessage('Failed to create a dataset with Shareabouts API response %s %s' % (ds_response.status_code, ds_response.content))
         return HttpResponse(json.dumps({'errors': 'Unknown upstream problem.'}),
             status=502,
             content_type='application/json')
 
+
+def add_dataset_permissions(dataset_url, host, shareabouts_auth):
+    # Try to add CORS permissinos for the given host to access the dataset.
+    # Retry up to 5 times.
+    origins_url = dataset_url + '/origins'
+    retries = 5
+    for _ in range(retries):
+        origins_response = requests.post(origins_url, auth=shareabouts_auth, data={'pattern': host})
+        if origins_response.status_code == 201:
+            return True
+        else:
+            client.captureMessage('Failed to add permissions for host %s in dataset at %s: %s %s' % (host, dataset_url, origins_response.status_code, origins_response.content))
+            continue
+    return False
 
 @login_required
 def authorize_project(request):
