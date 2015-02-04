@@ -122,7 +122,8 @@ def create_dataset(request):
         # Set CORS permissions on the dataset.
         success = add_dataset_permissions(ds_url, request.META['HTTP_HOST'], planbox_auth)
         if not success:
-            return HttpResponse(json.dumps({'errors': 'Failed to add access permissions on the dataset.'}))
+            return HttpResponse(json.dumps({'errors': 'Failed to add access permissions on the dataset.'}),
+                status=502, content_type='application/json')
 
         # Return the dataset URL as well as a signature that we'll use later
         # when we authorize the user to access the Shareabouts API as the
