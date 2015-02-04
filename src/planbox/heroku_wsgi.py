@@ -16,7 +16,7 @@ application = get_wsgi_application()
 # Send errors to Sentry
 # TODO: Move this middleware to the bottom of the module if and when
 #       https://github.com/kennethreitz/dj-static/pull/36 gets resolved.
-from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
+from raven.contrib.django.middleware.wsgi import Sentry
 application = Sentry(application)
 
 from dj_static import Cling

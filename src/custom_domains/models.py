@@ -43,7 +43,7 @@ class BaseDomainMappingMixin (object):
 
 
 class DomainMapping (BaseDomainMappingMixin, models.Model):
-    domain = models.CharField(_('Custom domain'), max_length=250)
+    domain = models.CharField(_('Custom domain'), max_length=250, db_index=True)
     root_path = models.CharField(max_length=250, help_text=_('The path of the root URL for which this domain is a shortcut.'))
 
 
