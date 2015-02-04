@@ -72,10 +72,89 @@ you wish, but it will mean that anyone can write to your bucket.
   * Rediscloud (or your favorite Redis add-on)
   * Heroku Scheduler
 
-### Next thing
+### Create addons
 
-TBD
+Required:
+* Production PostgreSQL (necessary for PostGIS)
+* Redis Cloud
+* Postmark
 
+Recommended:
+* Log Entries
+* PG Backups
+
+```bash
+    heroku addons:add \
+        heroku-postgresql:standard-0 \
+        logentries:tryit \
+        pgbackups:auto-week \
+        postmark:10k \
+        rediscloud:25
+```
+
+
+### Set up the environment
+
+```bash
+    heroku config:set IS_HEROKU=True \
+                      BUILDPACK_URL="https://github.com/heroku/heroku-buildpack-multi.git" \
+                      DEBUG=False \
+                      EMAIL_HOST=$(heroku config:get POSTMARK_SMTP_SERVER) \
+                      EMAIL_HOST_PASSWORD=$(heroku config:get POSTMARK_API_TOKEN) \
+                      EMAIL_HOST_USER=$(heroku config:get POSTMARK_API_KEY) \
+                      EMAIL_PORT=25 \
+                      EMAIL_USE_TLS=True
+```
+
+### Set up contact info
+
+```bash
+    heroku config:set CONTACT_EMAIL="hello@yourdomain.com" \
+                      ADMINS="dev@yourdomain.com"
+```
+
+### Set up Shareabouts integration
+
+1. Create a user, a client, and a remote client user on the API
+2. Set the environment variables
+
+    ```bash
+    heroku config:set SHAREABOUTS_HOST=yourshareabouts.herokuapp.com \
+                      SHAREABOUTS_USERNAME=planbox \
+                      SHAREABOUTS_PASSWORD=AJasdfAWgfJ324v9A953 \
+                      SHAREABOUTS_CLIENT_ID=fed321bc0987af654ed3 \
+                      SHAREABOUTS_CLIENT_SECRET=1234abcd5678ef90123abc456de789f12345ab67
+    ```
+
+### Set up AWS S3
+
+1. Create your bucket on S3
+2. Add the information to your environment
+
+    ```bash
+    heroku config:set S3_MEDIA_BUCKET=your-media-bucket \
+                      AWS_ACCESS_KEY=ABCDEFG12HIGJKMN45OP \
+                      AWS_SECRET_KEY="a123bcDEFghIJ6789KlmnOpqwSTU34V123WX+2yz"
+    ```
+
+3. Enter in a CORS configuration that looks like:
+
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <CORSRule>
+            <AllowedOrigin>https://yourdomain.org</AllowedOrigin>
+            <AllowedOrigin>https://*.yourdomain.org</AllowedOrigin>
+            <AllowedOrigin>https://yourapp.herokuapp.com</AllowedOrigin>
+            <AllowedMethod>GET</AllowedMethod>
+            <AllowedMethod>PUT</AllowedMethod>
+            <AllowedMethod>POST</AllowedMethod>
+            <AllowedMethod>DELETE</AllowedMethod>
+            <MaxAgeSeconds>3000</MaxAgeSeconds>
+            <AllowedHeader>*</AllowedHeader>
+        </CORSRule>
+    </CORSConfiguration>
+    ```
 
 ## Supported Browsers
 
