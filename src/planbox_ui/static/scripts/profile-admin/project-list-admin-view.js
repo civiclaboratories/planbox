@@ -102,8 +102,27 @@ var Planbox = Planbox || {};
     },
 
     onShow: function() {
-      $('#teamWelomeModal').foundation('reveal', 'open');
+      if (!NS.Utils.cookies.get('supress-team-welcome-modal')) {
+        $('#teamWelomeModal')
+          .foundation('reveal', 'open')
+          .on('opened.fndtn.reveal', _.bind(this.handleWelcomeModalOpened, this));
+      }
+    },
+
+    handleWelcomeModalOpened: function(evt) {
+      // Bind Modal supression events
+      var $showWelcomeFlag = $(evt.currentTarget).find('[name="show_again"]');
+      $showWelcomeFlag.on('change', _.bind(this.handleShowWelcomeModalFlagChange, this));
+    },
+
+    handleShowWelcomeModalFlagChange: function(evt) {
+      if ($(evt.currentTarget).is(':checked')) {
+        NS.Utils.cookies.destroy('supress-team-welcome-modal');
+      } else {
+        NS.Utils.cookies.save('supress-team-welcome-modal', true);
+      }
     }
+
   });
 
 }(Planbox, jQuery));
