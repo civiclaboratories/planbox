@@ -156,6 +156,11 @@ var Planbox = Planbox || {};
         // as a relational collection to the project.
         this.model.collection.remove(this.model);
       }
+    },
+    onRender: function() {
+      // This is so any changes to the menu_label will be reflected in the
+      // slug.
+      this.model.set('slug', '', {silent: true});
     }
   };
 

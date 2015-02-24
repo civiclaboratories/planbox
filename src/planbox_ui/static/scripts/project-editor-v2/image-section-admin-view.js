@@ -25,9 +25,7 @@ var Planbox = Planbox || {};
       onRender: function() {
         this.initRichEditables();
         this.initDropZones();
-        // This is so any changes to the menu_label will be reflected in the
-        // slug.
-        this.model.set('slug', '', {silent: true});
+        NS.SectionAdminMixin.onRender.call(this);
       }
     })
   );
