@@ -22,7 +22,8 @@
     <div class="row section-layout-container">
       <div class="large-12 columns pen-container-1">
         <div class="float-label-container">
-          <textarea class="rich-editable content-editable float-label-input" data-attr="content">{{ details.content }}</textarea>
+          <div class="rich-editable content-editable raw-editable float-label-input" data-raw-attr="content">{{ default details.content '<!-- Add your HTML here -->
+' }}</div>
           <span class="float-label">Raw HTML</span>
         </div>
       </div>

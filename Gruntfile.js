@@ -324,6 +324,7 @@ module.exports = function (grunt) {
             '<%= yeoman.app %>/bower_components/swag/lib/swag.js',
             '<%= yeoman.app %>/bower_components/leaflet/dist/leaflet-src.js',
             '<%= yeoman.app %>/scripts/leaflet-imagepath-set.js',
+            '<%= yeoman.app %>/bower_components/ace-builds/src/ace.js',
             '<%= yeoman.app %>/bower_components/jqxdomainrequest/jQuery.XDomainRequest.js',
             '<%= yeoman.app %>/bower_components/gatekeeper/gatekeeper.js',
             '<%= yeoman.app %>/bower_components/shareabouts-js/src/utils.js',
