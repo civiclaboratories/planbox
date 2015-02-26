@@ -50,7 +50,7 @@
   <script src="{{ STATIC_URL }}bower_components/pickadate/lib/picker.date.js"></script>
   <script src="{{ STATIC_URL }}bower_components/chosen/chosen.jquery.js"></script>
   <script src="{{ STATIC_URL }}bower_components/leaflet/dist/leaflet-src.js"></script>
-  <script src="{{ STATIC_URL }}bower_components/ace-builds/src/ace.js"></script>
+  <script src="{{ STATIC_URL }}bower_components/ace-builds/src-noconflict/ace.js"></script>
   <script src="{{ STATIC_URL }}bower_components/jqxdomainrequest/jQuery.XDomainRequest.js"></script>
 
   <script src="{{ STATIC_URL }}bower_components/gatekeeper/gatekeeper.js"></script>
@@ -62,6 +62,7 @@
   <script src="{{ STATIC_URL }}bower_components/shareabouts-js/src/map.js"></script>
   {% else %}
   <script src="{{ STATIC_URL }}scripts/components.min.js?deployed_at={{ settings.LAST_DEPLOY_DATE|urlencode:'' }}"></script>
+  <script src="{{ STATIC_URL }}bower_components/ace-builds/src-min-noconflict/ace.js"></script>
   <script src="{{ STATIC_URL }}scripts/components-admin.min.js?deployed_at={{ settings.LAST_DEPLOY_DATE|urlencode:'' }}"></script>
   {% endif %}
   <script>Swag.registerHelpers(Handlebars);</script>
