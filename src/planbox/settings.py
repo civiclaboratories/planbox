@@ -99,6 +99,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "planbox_ui.context_processors.settings",
 )
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

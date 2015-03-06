@@ -19,7 +19,7 @@ psycopg2==2.5.3
 psycogreen==1.0
 jsonfield==1.0.0
 pytz==2014.7
-
+django-redis==3.8.3
 
 
 # ========================================
