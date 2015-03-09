@@ -145,6 +145,7 @@ def rel_path(*subs):
 
 STATIC_ROOT = rel_path('../../staticfiles')
 STATIC_URL = '/static/'
+INTERNAL_IPS = ('127.0.0.1',)
 
 
 # If we need to load additional settings...
