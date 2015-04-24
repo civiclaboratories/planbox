@@ -1,14 +1,37 @@
 <div style="position:relative;">
   <span id="setup" class="offset-anchor"></span>
   <span id="pricing" class="offset-anchor"></span>
-  <h2 class="extra-padding-top extra-margin-bottom"><a href="#pricing" class="unstyled-link">Pricing</a> <small><em>The first 15{# {{ settings.TRIAL_DAYS }} #}&nbsp;days are on us!</em></small></h2>
+  <h2 class="extra-padding-top extra-margin-bottom"><a href="#pricing" class="unstyled-link">Pricing</a> <!-- <small><em>The first 15{# {{ settings.TRIAL_DAYS }} #}&nbsp;days are on us!</em></small> --></h2>
   <!-- <h3 class=""><em>The first {{ settings.TRIAL_DAYS }}&nbsp;days are on us!</em></h3> -->
+
+  <div class="row">
+    <div class="medium-6 columns">
+      <p>
+        {% if user.is_authenticated %}Start making maps.
+        {% else %}Creating an account is free. <a href="/signup/"><strong>Sign up</strong></a> and start making maps.
+        {% endif %}
+        Try out all our <a href="/map-flavors/#"><strong>templates</strong></a>&mdash;they're fully functional prior to payment. Pay only when you're ready to take your map live!
+      </p>
+    </div>
+    <div class="medium-6 columns">
+      <ul>
+        <li class="bullet-item"><small>Create an unlimited number of maps and test all the <!-- <a href="#"> -->features<!-- </a> -->, <em>risk free.</em></small></li>
+        <li class="bullet-item"><small>Customize &amp; review with your team. When you're ready, select a payment option that best suits your needs.</small></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <a class="button large less-padding radius expand" href="/signup/">Get Started</a>
+    </div>
+  </div>
 
   {% include 'payment-options.html' %}
 
   <p class="">
-    Require a registered vendor or another payment method? 
-    <br class="show-for-medium-up">Working on a community project? 
+    Require a registered vendor or another payment method?
+    <br class="show-for-medium-up">Working on a community project?
     <a href="mailto:{{ settings.PLANBOX_CONTACT_EMAIL }}" class="open-intercom"><strong>Contact Us</strong></a>
   </p>
 </div>

@@ -1841,6 +1841,14 @@ textarea.no-resize {
   border-bottom-right-radius: 0;
 }
 
+/*--------------------------------------------------
+  Ace Editor Overrides
+--------------------------------------------------*/
+.raw-editable.ace_editor {
+  line-height: 1.2rem;
+  font-size: 1rem;
+}
+
 
 /*--------------------------------------------------
   Project Dashboard / Widgets

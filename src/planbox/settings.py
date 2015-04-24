@@ -99,6 +99,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "planbox_ui.context_processors.settings",
 )
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -142,6 +145,7 @@ def rel_path(*subs):
 
 STATIC_ROOT = rel_path('../../staticfiles')
 STATIC_URL = '/static/'
+INTERNAL_IPS = ('127.0.0.1',)
 
 
 # If we need to load additional settings...

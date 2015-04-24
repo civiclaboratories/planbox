@@ -12784,15 +12784,24 @@ textarea.no-resize {
 }
 
 /*--------------------------------------------------
+  Ace Editor Overrides
+--------------------------------------------------*/
+/* line 1847, main.scss */
+.raw-editable.ace_editor {
+  line-height: 1.2rem;
+  font-size: 1rem;
+}
+
+/*--------------------------------------------------
   Project Dashboard / Widgets
 --------------------------------------------------*/
-/* line 1851, main.scss */
+/* line 1859, main.scss */
 .stat-widget.coming-soon {
   background-color: #f6f6f6;
   color: #ddd;
   position: relative;
 }
-/* line 1855, main.scss */
+/* line 1863, main.scss */
 .stat-widget.coming-soon:before {
   content: "Coming Soon...";
   position: absolute;
@@ -12806,7 +12815,7 @@ textarea.no-resize {
   font-style: italic;
 }
 
-/* line 1871, main.scss */
+/* line 1879, main.scss */
 .stat-widget.loading {
   position: relative;
   -webkit-animation: loading-shadow 2s linear infinite;
@@ -12815,7 +12824,7 @@ textarea.no-resize {
   border-color: rgba(108, 113, 128, 0.25);
   color: rgba(108, 113, 128, 0.25);
 }
-/* line 1878, main.scss */
+/* line 1886, main.scss */
 .stat-widget.loading:before {
   content: "";
   position: absolute;
@@ -12827,7 +12836,7 @@ textarea.no-resize {
   -webkit-animation: loading-bg 3s linear infinite;
   animation: loading-bg 3s linear infinite;
 }
-/* line 1889, main.scss */
+/* line 1897, main.scss */
 .stat-widget.loading:after {
   content: "LOADING...";
   position: absolute;
@@ -12892,74 +12901,74 @@ textarea.no-resize {
     right: 0%;
   }
 }
-/* line 1926, main.scss */
+/* line 1934, main.scss */
 .stat-widget-big-number .count {
   display: block;
   font-size: 2.5rem;
   line-height: 1.2;
 }
-/* line 1931, main.scss */
+/* line 1939, main.scss */
 .stat-widget-big-number .unit {
   text-transform: uppercase;
 }
 
-/* line 1937, main.scss */
+/* line 1945, main.scss */
 .table-container {
   max-width: 100%;
   overflow: auto;
 }
 
-/* line 1942, main.scss */
+/* line 1950, main.scss */
 .datatable table {
   margin-bottom: 0;
   border: 0;
 }
-/* line 1946, main.scss */
+/* line 1954, main.scss */
 .datatable table tr th, .datatable table tr td {
   font-size: 0.6875rem;
 }
-/* line 1951, main.scss */
+/* line 1959, main.scss */
 .datatable .table-column {
   max-height: 6.5em;
   width: 8rem;
   overflow: auto;
   text-align: center;
 }
-/* line 1957, main.scss */
+/* line 1965, main.scss */
 .datatable .table-column-20rem {
   width: 10rem;
 }
-/* line 1958, main.scss */
+/* line 1966, main.scss */
 .datatable .table-column-20rem {
   width: 20rem;
 }
-/* line 1959, main.scss */
+/* line 1967, main.scss */
 .datatable .table-column-30rem {
   width: 30rem;
 }
-/* line 1960, main.scss */
+/* line 1968, main.scss */
 .datatable .table-column-40rem {
   width: 40rem;
 }
-/* line 1961, main.scss */
+/* line 1969, main.scss */
 .datatable .table-column-50rem {
   width: 50rem;
 }
-/* line 1962, main.scss */
+/* line 1970, main.scss */
 .datatable .table-column-75rem {
   width: 75rem;
 }
-/* line 1963, main.scss */
+/* line 1971, main.scss */
 .datatable .table-column-75rem {
   width: 100rem;
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 1965, main.scss */
+  /* line 1973, main.scss */
   .datatable thead tr,
   .datatable tbody tr {
     display: block;
   }
-  /* line 1969, main.scss */
+  /* line 1977, main.scss */
   .datatable tbody {
     display: block;
     overflow-x: hidden;
@@ -12967,17 +12976,17 @@ textarea.no-resize {
   }
 }
 
-/* line 1977, main.scss */
+/* line 1985, main.scss */
 .table-map {
   height: 200px;
 }
 
-/* line 1983, main.scss */
+/* line 1991, main.scss */
 .scroll-nav {
   position: relative;
   z-index: 2;
 }
-/* line 1986, main.scss */
+/* line 1994, main.scss */
 .scroll-nav .scroll-button {
   position: absolute;
   top: 0;
@@ -12989,30 +12998,30 @@ textarea.no-resize {
   color: #fff;
   background-color: #267299;
 }
-/* line 1996, main.scss */
+/* line 2004, main.scss */
 .scroll-nav .scroll-button.right {
   right: 0;
   margin-right: -0.75rem;
   border-radius: 0 1rem 1rem 0;
 }
-/* line 1997, main.scss */
+/* line 2005, main.scss */
 .scroll-nav .scroll-button.left {
   left: 0;
   margin-left: -0.75rem;
   border-radius: 1rem 0 0 1rem;
 }
-/* line 1998, main.scss */
+/* line 2006, main.scss */
 .scroll-nav .scroll-button:hover {
   background-color: #1f5c7a;
 }
 
-/* line 2007, main.scss */
+/* line 2015, main.scss */
 .tab-title > a:focus,
 .tabs-content [tabindex]:focus {
   outline: 0;
 }
 
-/* line 2014, main.scss */
+/* line 2022, main.scss */
 .shareabouts-auth-container,
 .or-sign-in {
   display: none !important;

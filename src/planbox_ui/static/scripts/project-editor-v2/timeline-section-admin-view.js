@@ -205,6 +205,8 @@ var Planbox = Planbox || {};
         this.initRichEditables();
         // SortableListAdminView
         this.initSortableItemList();
+
+        NS.SectionAdminMixin.onRender.call(this);
       }
     })
   );

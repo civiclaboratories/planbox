@@ -32,10 +32,12 @@
       s3UploadData: {{ s3_upload_form_data|as_json }}
     };
 
+    {% if debug %}
     Raven.setUserContext({
         username: Planbox.Data.user.email,
         id: Planbox.Data.user.id
     });
+    {% endif %}
   </script>
 
   {% if debug %}
@@ -50,6 +52,7 @@
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/timeline-section-admin-view.js"></script>
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/text-section-admin-view.js"></script>
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/image-section-admin-view.js"></script>
+  <script src="{{ STATIC_URL }}scripts/project-editor-v2/raw-section-admin-view.js"></script>
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/section-list-admin-view.js"></script>
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/modal-view.js"></script>
   <script src="{{ STATIC_URL }}scripts/project-editor-v2/project-location-map-view.js"></script>
