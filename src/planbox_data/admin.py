@@ -258,7 +258,7 @@ class ProjectAdmin (DjangoObjectActions, admin.ModelAdmin):
     )
     objectactions = ('clone_project',)
     raw_id_fields = ('theme', 'template', 'owner', 'customer')
-    readonly_fields = ('_api_url',)
+    readonly_fields = ('_api_url', '_editor_url', '_dashboard_url', '_preview_url')
     form = modelform_factory(Project, fields='__all__', widgets={
         'title': TextInput(attrs={'class': 'vTextField'}),
         'location': TextInput(attrs={'class': 'vTextField'}),
@@ -321,6 +321,24 @@ class ProjectAdmin (DjangoObjectActions, admin.ModelAdmin):
         return '<a href="{0}" target="_blank">{0}</a>'.format(url)
     _api_url.allow_tags = True
     _api_url.short_description = _('API URL')
+
+    def _editor_url(self, project):
+        url = reverse('app-project-editor', args=[project.owner.slug, project.slug])
+        return '<a href="{0}" target="_blank">{0}</a>'.format(url)
+    _editor_url.allow_tags = True
+    _editor_url.short_description = _('Editor URL')
+
+    def _dashboard_url(self, project):
+        url = reverse('app-project-dashboard', args=[project.owner.slug, project.slug])
+        return '<a href="{0}" target="_blank">{0}</a>'.format(url)
+    _dashboard_url.allow_tags = True
+    _dashboard_url.short_description = _('Dashboard URL')
+
+    def _preview_url(self, project):
+        url = reverse('app-project-page', args=[project.owner.slug, project.slug])
+        return '<a href="{0}" target="_blank">{0}</a>'.format(url)
+    _preview_url.allow_tags = True
+    _preview_url.short_description = _('Preview URL')
 
     # Format datetimes
     def _expires_at(self, project):
