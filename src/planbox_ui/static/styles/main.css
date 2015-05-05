@@ -13015,13 +13015,18 @@ textarea.no-resize {
   background-color: #1f5c7a;
 }
 
-/* line 2015, main.scss */
+/* line 2012, main.scss */
+.datatable .existing-snapshot-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+/* line 2019, main.scss */
 .tab-title > a:focus,
 .tabs-content [tabindex]:focus {
   outline: 0;
 }
 
-/* line 2022, main.scss */
+/* line 2026, main.scss */
 .shareabouts-auth-container,
 .or-sign-in {
   display: none !important;

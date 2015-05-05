@@ -2009,6 +2009,10 @@ $scroll-nav-button-color: scale-color($button-bg-color, $lightness: $button-func
   }
 }
 
+.datatable .existing-snapshot-wrapper {
+  margin-bottom: 0.5rem;
+}
+
 // Tabs
 .tab-title > a,
 .tabs-content [tabindex] {

@@ -409,4 +409,59 @@ var Planbox = Planbox || {};
     }
   };
 
+  NS.SnapshotGeneratorMixin = {
+    disableSnapshotButton: function(label) {
+      this.ui.generateSnapshot
+          .attr('disabled', 'disabled')
+          .addClass('generating')
+          .html(label);
+    },
+
+    enableSnapshotButton: function(label) {
+      this.ui.generateSnapshot
+        .removeAttr('disabled')
+        .removeClass('generating')
+        .html(label);
+    },
+
+    generateSnapshot: function(options) {
+      if (!this.ui.generateSnapshot.hasClass('generating')) {
+        var self = this,
+            originalSnapshotButtonLabel = self.ui.generateSnapshot.html(),
+            generatingSnapshotLabel = self.ui.generateSnapshot.attr('data-generating-label'),
+            datasetUrl = options.datasetUrl,
+            setName = options.setName || 'places',
+            downloadTemplate = Backbone.Marionette.TemplateCache.get('#download-snapshot-button-tpl'),
+            snapshots = new Shareabouts.SnapshotCollection(),
+            snapshot;
+
+        self.disableSnapshotButton(generatingSnapshotLabel);
+
+        snapshots.url = datasetUrl + '/' + setName + '/snapshots';
+
+        // Request a new snapshot
+        snapshot = snapshots.create({}, {
+          success: function() {
+
+            // Listen until the snapshot has been generated
+            snapshot.waitUntilReady({
+              data: {'include_submissions': true},
+              success: function(url) {
+
+                // Show a download button when the snapshot is ready
+                self.ui.snapshotsWrapper
+                  .html(downloadTemplate(snapshot.toJSON()));
+                self.enableSnapshotButton(originalSnapshotButtonLabel);
+              },
+              error: function() {
+                self.enableSnapshotButton(originalSnapshotButtonLabel);
+                alert('There was a problem generating your\nsnapshot. Please try again later.');
+              }
+            });
+          }
+        });
+      }
+    }
+  };
+
 }(Planbox, jQuery));
