@@ -3,7 +3,9 @@
   <div class="small-12 columns">
     {{#if label}}<h3 class="section-heading">{{ label }}</h3>{{/if}}
     <div class="full-width-image-container text-center">
+      {{#if details.open }}<a href="{{ details.img_url }}" target="_blank">{{/if}}
       <img src="{{ details.img_url }}" class="project-image">
+      {{#if details.open }}</a>{{/if}}
     </div>
   </div>
 </div>

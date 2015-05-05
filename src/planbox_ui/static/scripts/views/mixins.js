@@ -90,11 +90,19 @@ var Planbox = Planbox || {};
 
   NS.ContentEditableMixin = {
     handleEditableBlur: function(evt) {
+      evt.preventDefault();
+
       var $target = $(evt.currentTarget),
           attr = $target.attr('data-attr'),
-          val = $target.is('[contenteditable]') ? $target.html() : $target.val();
+          val;
 
-      evt.preventDefault();
+      if ($target.is('[contenteditable]')) {
+        val = $target.html();
+      } else if ($target.attr('type') === 'checkbox') {
+        val = $target.is(':checked');
+      } else {
+        val = $target.val();
+      }
 
       // Set the value of what was just blurred. Setting an event to the same
       // value does not trigger a change event.
