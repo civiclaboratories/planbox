@@ -42,12 +42,12 @@
       s3UploadData: {{ s3_upload_form_data|as_json }}
     };
 
-    {% if not debug %}
-    Raven.setUserContext({
-        username: Planbox.Data.user.email,
-        id: Planbox.Data.user.id
-    });
-    {% endif %}
+    if (Raven && Planbox.Data.user) {
+      Raven.setUserContext({
+          username: Planbox.Data.user.email,
+          id: Planbox.Data.user.id
+      });
+    }
   </script>
 
   {% if debug %}

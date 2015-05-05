@@ -4,6 +4,7 @@ import datetime
 # Debug is False by default, true if set in the environment.
 DEBUG = (os.environ.get('DEBUG', 'False') in ['true', 'True'])
 TEMPLATE_DEBUG = DEBUG
+INTERNAL_IPS = ['127.0.0.1']
 SHOW_DEBUG_TOOLBAR = (os.environ.get('SHOW_DEBUG_TOOLBAR', 'False') in ['true', 'True']) or DEBUG
 HTTPS_ENABLED = (os.environ.get('HTTPS', 'on').lower() in ['true', 'on'])
 SESSION_COOKIE_SECURE = HTTPS_ENABLED
