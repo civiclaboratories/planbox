@@ -14,12 +14,6 @@ INTERNAL_IPS = ('127.0.0.1',)
 #     }
 # }
 
-INSTALLED_APPS += (
-    'django_nose',
-)
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
 HTTPS_ENABLED = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
