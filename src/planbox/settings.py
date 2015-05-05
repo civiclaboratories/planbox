@@ -145,7 +145,6 @@ def rel_path(*subs):
 
 STATIC_ROOT = rel_path('../../staticfiles')
 STATIC_URL = '/static/'
-INTERNAL_IPS = ('127.0.0.1',)
 
 
 # If we need to load additional settings...
@@ -169,3 +168,8 @@ try:
 except IOError:
     pass
 
+
+if DEBUG:
+    INTERNAL_IPS = ('127.0.0.1',)
+    INSTALLED_APPS += ('django_nose',)
+    TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
