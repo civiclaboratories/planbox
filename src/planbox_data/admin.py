@@ -63,6 +63,7 @@ class ProfileAdmin (admin.ModelAdmin):
     search_fields = ('name', 'slug', 'email')
 
     # filter_horizontal and inlines set in get_form
+    readonly_fields = ('_profile_admin_url',)
 
     def _date_joined(self, obj):
         return obj.created_at
@@ -74,6 +75,12 @@ class ProfileAdmin (admin.ModelAdmin):
     _is_user.boolean = True
     _is_user.short_description = _('Is User?')
     _is_user.admin_order_field = 'auth_id'
+
+    def _profile_admin_url(self, obj):
+        url = reverse('app-profile', args=[obj.slug])
+        return '<a href="{0}" target="_blank">{0}</a>'.format(url)
+    _profile_admin_url.allow_tags = True
+    _profile_admin_url.short_description = _('Profile Admin URL')
 
     def get_form(self, request, obj=None, **kwargs):
         self.exclude = []
