@@ -1553,6 +1553,9 @@ span.sub-heading-postfix {
 .pen-menu * {
   box-sizing: content-box !important;
 }
+.pen-menu .pen-icon:before {
+  line-height: 36px;
+}
 
 .section-settings-toggle-container {
   margin-bottom: 0.75rem;
