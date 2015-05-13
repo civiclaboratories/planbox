@@ -6,6 +6,9 @@ var Planbox = Planbox || {};
   NS.TimelineController = function() {};
   NS.TimelineController.prototype = {
     initEvents: function($timeline) {
+      // TODO: Make the following value configurable through the UI.
+      this.futureEventsShownCount = 4;
+
       $timeline.find('li.event').each(function(i, el) {
         var $el = $(el);
         var nowTime = new Date();
@@ -37,14 +40,21 @@ var Planbox = Planbox || {};
       var futureCount = $timeline.find('.future-event').length;
 
       if ( pastCount ) {
-        $timeline.find('.past-event').addClass('hide');
-        $timeline.find('.show-more-past-events').removeClass('hide');
+        this.hidePastEvents($timeline);
       }
 
-      if ( futureCount > 4 ) {
-        $timeline.find('.future-event').slice(4).addClass('hide');
-        $timeline.find('.show-more-future-events').removeClass('hide');
+      if ( futureCount > this.futureEventsShownCount ) {
+        this.hideFutureEvents($timeline);
       }
+    },
+    hidePastEvents: function($timeline) {
+      $timeline.find('.past-event').addClass('hide');
+      $timeline.find('.show-more-past-events').removeClass('hide');
+    },
+    hideFutureEvents: function($timeline) {
+      var count = this.futureEventsShownCount;
+      $timeline.find('.future-event').slice(count).addClass('hide');
+      $timeline.find('.show-more-future-events').removeClass('hide');
     },
     showPastEvents: function($timeline) {
       $timeline.find('li.past-event').removeClass('hide');
