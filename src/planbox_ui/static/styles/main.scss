@@ -40,7 +40,7 @@ html {
     position: fixed;
   }
   & .top-bar {
-    background: transparent url('//openplans.org/static/images/orange-ff8b38-2000x65.gif') 0 0 no-repeat scroll;
+    background: transparent url('/static/images/orange-ff8b38-2000x65.gif') 0 0 no-repeat scroll;
     box-shadow: 62.5rem 0 #ff8b38, -62.5rem 0 #ff8b38; // extend the orange past the width of .top-bar
   }
   &,
