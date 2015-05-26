@@ -40,8 +40,8 @@ html {
     position: fixed;
   }
   & .top-bar {
-    background: transparent url('/static/images/orange-ff8b38-2000x65.gif') 0 0 no-repeat scroll;
-    box-shadow: 62.5rem 0 #ff8b38, -62.5rem 0 #ff8b38; // extend the orange past the width of .top-bar
+    background: transparent url('/static/images/blue-204264-2000x65.gif') 0 0 no-repeat scroll;
+    box-shadow: 62.5rem 0 $secondary-color, -62.5rem 0 $secondary-color; // extend the orange past the width of .top-bar
   }
   &,
   &.contain-to-grid,
@@ -79,6 +79,10 @@ html {
   .top-bar.expanded .top-bar-section {
     padding-top: 0;
   }
+}
+
+.top-bar-section > ul > li {
+  margin-top: 10px;
 }
 
 
@@ -330,9 +334,9 @@ section, footer {
   .slogan {
     margin: 0;
     padding: 0.5rem;
-    font-family: 'Bitter', serif;
+    font-family: $subheader-font-family;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: $subheader-font-weight;
     background-color: rgba(scale-color($secondary-color, $lightness: -22%, $saturation: 20%), 0.8);
     box-shadow: 0 5px 0 rgba(51,51,51,0.2);
     @media #{$medium-up} {
@@ -534,8 +538,8 @@ section, footer {
     height: 246px;
     line-height: 246px;
     text-align: center;
-    font-family: 'Bitter', serif;
-    font-weight: 700;
+    font-family: $subheader-font-family;
+    font-weight: $subheader-font-weight;
     font-size: 3rem;
     text-shadow: 0 0 0.5rem scale-color($primary-color, $lightness: -75%);;
     @media #{$medium-up} {

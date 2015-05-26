@@ -117,9 +117,9 @@ $body-font-color: #6c7180;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
-$primary-color: #308fbf;
+$primary-color: #CC4C37;
 // $secondary-color: #e7e7e7;
-$secondary-color: #ff8b38;
+$secondary-color: #204264;
 // $alert-color: #f04124;
 $alert-color: #f24c3d;
 // $success-color: #43AC6A;
@@ -206,9 +206,9 @@ $xlarge-range: (80.063em, 120em);
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-$header-font-family: 'Bitter', serif;
+$header-font-family: 'Open Sans', sans-serif;
 // $header-font-weight: $font-weight-normal;
-$header-font-weight: 700;
+$header-font-weight: 400;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 $header-font-color: #6c7180;
@@ -234,9 +234,10 @@ $header-font-color: #6c7180;
 // $h6-font-reduction: 0 !default;
 
 // These control how subheaders are styled.
+$subheader-font-family: 'Bitter', serif;
 // $subheader-line-height: 1.4;
 // $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
-// $subheader-font-weight: $font-weight-normal;
+$subheader-font-weight: 400;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
@@ -1447,7 +1448,7 @@ $topbar-dropdown-link-bg: $primary-color;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
+$topbar-link-color: #A0BDBF;
 // $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
