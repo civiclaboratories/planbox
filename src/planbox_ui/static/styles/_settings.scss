@@ -99,7 +99,7 @@ $font-weight-bold: bold !default;
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-bg: #eee;
+$body-bg: #f8f8f8;
 // $body-font-color: $jet;
 $body-font-color: #6c7180;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1027,7 +1027,7 @@ $price-title-weight: $header-font-weight;
 $price-title-font-family: $header-font-family;
 
 // We use these to control the price styles
-// $price-money-bg: $vapor  ;
+$price-money-bg: white;
 // $price-money-padding: rem-calc(15 20);
 // $price-money-align: center;
 // $price-money-color: $oil;

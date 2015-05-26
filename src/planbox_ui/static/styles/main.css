@@ -496,7 +496,7 @@ body {
 
 /* line 391, ../bower_components/foundation/scss/foundation/components/_global.scss */
 body {
-  background: #eee;
+  background: #f8f8f8;
   color: #6c7180;
   padding: 0;
   margin: 0;
@@ -5859,7 +5859,7 @@ ul.pagination li {
 }
 /* line 143, ../bower_components/foundation/scss/foundation/components/_pricing-tables.scss */
 .pricing-table .price {
-  background-color: #F6F6F6;
+  background-color: white;
   padding: 0.9375rem 1.25rem;
   text-align: center;
   color: #333333;
@@ -9923,7 +9923,7 @@ input[type="url"].inline-input {
 }
 /* line 442, _foundation.scss */
 .panel-header h1, .panel-header h2, .panel-header h3, .panel-header h4, .panel-header h5, .panel-header h6 {
-  color: #eee;
+  color: #f8f8f8;
 }
 /* line 445, _foundation.scss */
 .panel-header .button {
@@ -10667,7 +10667,7 @@ input:checked + .toggle-sibling-label.button {
 
 /* line 372, main.scss */
 .product-section-alt {
-  background-color: #ddd;
+  background-color: #eee;
 }
 
 /* line 377, main.scss */
@@ -11546,7 +11546,7 @@ input:checked + .toggle-sibling-label.button {
 /* line 879, main.scss */
 .site-colophon {
   padding-top: 2rem;
-  background-color: #eee;
+  background-color: #f8f8f8;
   color: #888d9b;
 }
 /* line 883, main.scss */
@@ -11783,8 +11783,8 @@ img.attachment-icon {
 
 /* line 1062, main.scss */
 .project-shareabouts {
-  border-top: 2px solid #eee;
-  border-bottom: 2px solid #eee;
+  border-top: 2px solid #f8f8f8;
+  border-bottom: 2px solid #f8f8f8;
   position: relative;
   width: 100%;
   margin: 0 auto;
