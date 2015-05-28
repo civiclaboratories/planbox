@@ -83,6 +83,12 @@ html {
 
 .top-bar-section > ul > li {
   margin-top: 10px;
+  background: none;
+}
+
+.top-bar-section > ul > li > a {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
 }
 
 
