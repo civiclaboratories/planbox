@@ -61,6 +61,15 @@ var Planbox = Planbox || {};
       },
 
       presave: function() {
+
+        // Shareabouts plugin presave
+        // ==========================
+        //
+        // BEFORE THE PROJECT GETS SAVED, if there's not a dataset URL
+        // already assigned, then make a call to create a dataset. Use
+        // the Planbox-integrated route, as this will determine the
+        // owner name and set up appropriate CORS permissions.
+
         var self = this;
 
         if (!this.model.get('details').dataset_url) {
@@ -90,6 +99,14 @@ var Planbox = Planbox || {};
       },
 
       postsave: function() {
+
+        // Shareabouts plugin postsave
+        // ===========================
+        //
+        // AFTER THE PROJECT GETS SAVED make a call that authorizes
+        // the project to do thinks like access private data for the
+        // project's dataset.
+
         var self = this;
 
         if (self.shareaboutsAccessData) {
