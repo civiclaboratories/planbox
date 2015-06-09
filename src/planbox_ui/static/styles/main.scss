@@ -40,7 +40,6 @@ html {
     position: fixed;
   }
   & .top-bar {
-    background: transparent url('/static/images/blue-204264-2000x65.gif') 0 0 no-repeat scroll;
     box-shadow: 62.5rem 0 $secondary-color, -62.5rem 0 $secondary-color; // extend the orange past the width of .top-bar
   }
   &,
@@ -304,7 +303,7 @@ section, footer {
   padding: 7% 0 17%;
   background-image: url(../images/index-map.jpg);
   background-position: center 70%;
-  color: #fff;
+  color: $topbar-link-color;
   text-align: center;
   box-shadow: inset 0 -2px 0 rgba(51,51,51,0.2);
   .tagline {
