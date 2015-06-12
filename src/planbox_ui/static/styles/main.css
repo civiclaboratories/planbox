@@ -13071,3 +13071,11 @@ textarea.no-resize {
 .or-sign-in {
   display: none !important;
 }
+
+/* line 2043, main.scss */
+img.trash-icon {
+  width: 16px;
+  margin-top: 1.5em;
+  float: right;
+  clear: right;
+}

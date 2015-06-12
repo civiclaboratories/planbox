@@ -18,7 +18,10 @@
   <div data-error-attr="slug" data-error-message="That link is already used by another map. Please use a different link for each map."></div>
 </form>
 {{#if expires_at}}
+
+<a href="#" class="small less-padding tiny-margin-bottom radius"><img class="trash-icon" src="{{ static_url }}images/trash.svg"></a>
 <p class="text-small no-margins">
   {{>project-expiration-message-tpl}}
 </p>
 {{/if}}
+
