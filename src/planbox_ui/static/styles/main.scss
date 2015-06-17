@@ -61,16 +61,22 @@ html {
     background-color: #cceeff;
     background-color: rgba(204,238,255,0.75);
   }
-  .openplans-logo-hole {
-    height: 100%;
-    width: auto;
+  .site-logo {
+    height: 64px;
+    width: 224px;
     display: block;
+    background-image: url(/static/images/civlabs-logo-truncated.png);
+
+    @media #{$large-up} {
+      width: 416px;
+      background-image: url(/static/images/civlabs-logo.png);
+    }
   }
   .top-bar-section {
     padding-top: 10px;
   }
   .top-bar.expanded .title-area {
-    background-color: transparent;
+    background-color: $secondary-color;
   }
   .top-bar.expanded {
     height: auto;
@@ -80,9 +86,12 @@ html {
   }
 }
 
+.top-bar-section > ul {
+  background-color: $primary-color;
+}
+
 .top-bar-section > ul > li {
   margin-top: 10px;
-  background: none;
 }
 
 .top-bar-section > ul > li > a {
