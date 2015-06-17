@@ -88,10 +88,18 @@ html {
 
 .top-bar-section > ul {
   background-color: $primary-color;
+
+  @media #{$medium-up} {
+    background: none;
+  }
 }
 
 .top-bar-section > ul > li {
   margin-top: 10px;
+
+  @media #{$medium-up} {
+    background: none;
+  }
 }
 
 .top-bar-section > ul > li > a {
