@@ -6,7 +6,7 @@ var Planbox = Planbox || {};
   'use strict';
 
   // Sections =================================================================
-  NS.AttachmentView = Backbone.Marionette.Layout.extend({
+  NS.AttachmentView = Backbone.Marionette.LayoutView.extend({
     template: '#attachment-tpl',
     tagName: 'li',
     className: 'attachment',
@@ -31,7 +31,7 @@ var Planbox = Planbox || {};
     itemViewContainer: '.attachment-list'
   });
 
-  NS.EventView = Backbone.Marionette.Layout.extend({
+  NS.EventView = Backbone.Marionette.LayoutView.extend({
     template: '#event-tpl',
     tagName: 'li',
     className: 'event',
@@ -251,7 +251,7 @@ var Planbox = Planbox || {};
     }
   });
 
-  NS.ProjectView = Backbone.Marionette.Layout.extend(
+  NS.ProjectView = Backbone.Marionette.LayoutView.extend(
     _.extend({}, NS.MagellanMenuMixin, {
       template: '#project-tpl',
       sectionListView: NS.ProjectSectionListView,

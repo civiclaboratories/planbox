@@ -5,7 +5,7 @@ var Planbox = Planbox || {};
 (function(NS, $) {
   'use strict';
 
-  NS.ActivityPanelView = Backbone.Marionette.Layout.extend({
+  NS.ActivityPanelView = Backbone.Marionette.LayoutView.extend({
     template: '#activity-panel-tpl',
     regions: {
       placeCountWidget: '.place-count-widget',

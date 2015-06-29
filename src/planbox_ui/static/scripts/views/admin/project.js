@@ -140,7 +140,7 @@ var Planbox = Planbox || {};
     }
   });
 
-  NS.ProjectAdminView = Backbone.Marionette.Layout.extend(
+  NS.ProjectAdminView = Backbone.Marionette.LayoutView.extend(
     _.extend({}, NS.ContentEditableMixin, {
       template: '#project-admin-tpl',
       ui: {

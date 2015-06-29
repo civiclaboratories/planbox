@@ -5,7 +5,7 @@ var Planbox = Planbox || {};
 (function(NS, $) {
   'use strict';
 
-  NS.ProjectDashboardView = Backbone.Marionette.Layout.extend({
+  NS.ProjectDashboardView = Backbone.Marionette.LayoutView.extend({
     template: '#project-dashboard-tpl',
     regions: {
       // profileDetailsRegion: '.profile',

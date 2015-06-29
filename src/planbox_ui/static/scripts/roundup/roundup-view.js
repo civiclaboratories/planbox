@@ -5,7 +5,7 @@ var Planbox = Planbox || {};
 (function(NS, $) {
   'use strict';
 
-  NS.RoundupView = Backbone.Marionette.Layout.extend({
+  NS.RoundupView = Backbone.Marionette.LayoutView.extend({
     template: '#roundup-tpl',
     regions: {
       ownerDetailRegion: '.owner-detail-region',

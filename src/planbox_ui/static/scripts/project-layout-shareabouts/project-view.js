@@ -5,7 +5,7 @@ var Planbox = Planbox || {};
 (function(NS, $) {
   'use strict';
 
-  NS.ProjectView = Backbone.Marionette.Layout.extend(
+  NS.ProjectView = Backbone.Marionette.LayoutView.extend(
     _.extend({}, NS.MagellanMenuMixin, {
       template: '#project-tpl',
       sectionListView: NS.ProjectSectionListView,

@@ -41,7 +41,7 @@ var Planbox = Planbox || {};
     }
   });
 
-  NS.SortableListItemAdminView = Backbone.Marionette.Layout.extend({
+  NS.SortableListItemAdminView = Backbone.Marionette.LayoutView.extend({
     initialize: function() {
       // cid is not accessible in the toJSON output
       this.$el.attr('data-id', this.model.cid);

@@ -5,7 +5,7 @@ var Planbox = Planbox || {};
 (function(NS, $) {
   'use strict';
 
-  NS.ProfileAdminView = Backbone.Marionette.Layout.extend({
+  NS.ProfileAdminView = Backbone.Marionette.LayoutView.extend({
     template: '#profile-admin-tpl',
     regions: {
       profileDetailsRegion: '.profile',
