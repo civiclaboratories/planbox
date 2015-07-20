@@ -3,7 +3,7 @@
 # ========================================
 Django==1.7.1
 gunicorn==19.0.0
-gevent==1.0.1
+gevent==1.0.2
 newrelic==2.28.0.26
 dj_static==0.0.6
 dj_database_url==0.3.0
