@@ -38,7 +38,7 @@ var Planbox = Planbox || {};
   });
 
   NS.ProjectMapView = Backbone.Marionette.CollectionView.extend({
-    itemView: NS.ProjectMapItemView,
+    childView: NS.ProjectMapItemView,
 
     initialize: function() {
       this.map = L.map(this.el);
@@ -47,13 +47,13 @@ var Planbox = Planbox || {};
       this.layerGroup = L.featureGroup().addTo(this.map);
     },
 
-    renderItemView: function(view, index) {
+    renderChildView: function(view, index) {
       if (view.layer) { this.layerGroup.removeLayer(view.layer); }
       view.render();
       if (view.layer) { this.layerGroup.addLayer(view.layer); }
     },
 
-    removeItemView: function(item){
+    removeChildView: function(item){
       var view = this.children.findByModel(item);
       if (view.layer) { this.layerGroup.removeLayer(view.layer); }
       this.removeChildView(view);

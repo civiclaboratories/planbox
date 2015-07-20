@@ -180,8 +180,8 @@ var Planbox = Planbox || {};
       tagName: 'section',
       id: NS.SectionMixin.id,
 
-      itemView: NS.EventAdminView,
-      itemViewContainer: '.event-list',
+      childView: NS.EventAdminView,
+      childViewContainer: '.event-list',
 
       ui: {
         editables: '[data-attr]:not(.event [data-attr])',

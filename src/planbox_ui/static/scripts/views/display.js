@@ -27,8 +27,8 @@ var Planbox = Planbox || {};
 
   NS.AttachmentListView = Backbone.Marionette.CompositeView.extend({
     template: '#attachments-section-tpl',
-    itemView: NS.AttachmentView,
-    itemViewContainer: '.attachment-list'
+    childView: NS.AttachmentView,
+    childViewContainer: '.attachment-list'
   });
 
   NS.EventView = Backbone.Marionette.LayoutView.extend({
@@ -74,8 +74,8 @@ var Planbox = Planbox || {};
     id: NS.SectionMixin.id,
     className: 'project-section-timeline',
 
-    itemView: NS.EventView,
-    itemViewContainer: '.event-list',
+    childView: NS.EventView,
+    childViewContainer: '.event-list',
 
     onRender: function() {
       var pastCount = this.$('.past-event').length;
@@ -154,8 +154,8 @@ var Planbox = Planbox || {};
     id: NS.SectionMixin.id,
     className: 'project-section-faqs',
 
-    itemView: NS.FaqView,
-    itemViewContainer: '.faq-list'
+    childView: NS.FaqView,
+    childViewContainer: '.faq-list'
   });
 
   NS.ShareaboutsSectionView = Backbone.Marionette.ItemView.extend({

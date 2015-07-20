@@ -17,19 +17,10 @@ var Planbox = Planbox || {};
 
   NS.ProjectListView = Backbone.Marionette.CompositeView.extend({
     template: '#project-list-tpl',
-    itemView: NS.ProjectListItemView,
-    itemViewContainer: '.project-list',
+    childView: NS.ProjectListItemView,
+    childViewContainer: '.project-list',
     emptyView: NS.ProjectListEmptyView,
-
-    showEmptyView: function(){
-      var EmptyView = this.getEmptyView();
-
-      if (EmptyView && !this._showingEmptyView){
-        this._showingEmptyView = true;
-        var model = this.model;
-        this.addItemView(model, EmptyView, 0);
-      }
-    }
+    emptyViewOptions: function() { return {model: this.model}; }
   });
 
 }(Planbox, jQuery));

@@ -76,21 +76,13 @@ var Planbox = Planbox || {};
 
   NS.ProjectListAdminView = Backbone.Marionette.CompositeView.extend({
     template: '#project-list-admin-tpl',
-    itemView: NS.ProjectListItemAdminView,
-    itemViewContainer: '.project-list',
+    childView: NS.ProjectListItemAdminView,
+    childViewContainer: '.project-list',
     emptyView: NS.ProjectListEmptyAdminView,
-
-    // Override Marionette 1.4.1 internal method to use the current model as
-    // opposed to a blank model in the view options. This wouldn't be necessary
-    // in the latest version, because we'd override emptyViewOptions.
-    showEmptyView: function(){
-      var EmptyView = this.getEmptyView();
-
-      if (EmptyView && !this._showingEmptyView){
-        this._showingEmptyView = true;
-        var model = this.model;
-        this.addItemView(model, EmptyView, 0);
-      }
+    emptyViewOptions: function() {
+      // Use the current model as opposed to a blank model in the empty project
+      // list.
+      return {model: this.model};
     },
 
     modelEvents: {

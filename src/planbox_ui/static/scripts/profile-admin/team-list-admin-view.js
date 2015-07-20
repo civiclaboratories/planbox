@@ -12,8 +12,8 @@ var Planbox = Planbox || {};
 
   NS.TeamListAdminView = Backbone.Marionette.CompositeView.extend({
     template: '#team-list-admin-tpl',
-    itemView: NS.TeamListItemAdminView,
-    itemViewContainer: '.team-list',
+    childView: NS.TeamListItemAdminView,
+    childViewContainer: '.team-list',
 
     ui: {
       newTeamButton: '.new-team-button',

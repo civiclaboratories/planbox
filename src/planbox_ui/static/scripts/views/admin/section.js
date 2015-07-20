@@ -28,8 +28,8 @@ var Planbox = Planbox || {};
     _.extend({}, NS.ContentEditableMixin, {
       template: '#attachments-section-admin-tpl',
       className: '',
-      itemView: NS.AttachmentAdminView,
-      itemViewContainer: '.attachment-list',
+      childView: NS.AttachmentAdminView,
+      childViewContainer: '.attachment-list',
 
       ui: {
         editables: '[data-attr]:not(.event [data-attr])',
@@ -257,8 +257,8 @@ var Planbox = Planbox || {};
       tagName: 'section',
       id: NS.SectionMixin.id,
 
-      itemView: NS.FaqAdminView,
-      itemViewContainer: '.faq-list',
+      childView: NS.FaqAdminView,
+      childViewContainer: '.faq-list',
 
       ui: {
         editables: '[contenteditable]:not(.faq [contenteditable])',

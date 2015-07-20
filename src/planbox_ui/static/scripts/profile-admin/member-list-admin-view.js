@@ -12,8 +12,8 @@ var Planbox = Planbox || {};
 
   NS.MemberListAdminView = Backbone.Marionette.CompositeView.extend({
     template: '#member-list-admin-tpl',
-    itemView: NS.MemberListItemAdminView,
-    itemViewContainer: '.member-list'
+    childView: NS.MemberListItemAdminView,
+    childViewContainer: '.member-list'
   });
 
 }(Planbox, jQuery));

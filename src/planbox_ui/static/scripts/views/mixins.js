@@ -176,9 +176,9 @@ var Planbox = Planbox || {};
     // https://github.com/marionettejs/backbone.marionette/wiki/Adding-support-for-sorted-collections
     // Inspired by the above link, but it doesn't work when you start with an
     // empty (or unsorted) list.
-    appendHtml: function(collectionView, itemView, index){
+    appendHtml: function(collectionView, childView, index){
       var collection = collectionView.collection,
-          childrenContainer = collectionView.itemViewContainer ? collectionView.$(collectionView.itemViewContainer) : collectionView.$el,
+          childrenContainer = collectionView.childViewContainer ? collectionView.$(collectionView.childViewContainer) : collectionView.$el,
           children = childrenContainer.children(),
           indices = [],
           sortNumber = function(a,b) { return a - b; },
@@ -226,12 +226,12 @@ var Planbox = Planbox || {};
       // console.log('at', goHereIndex);
 
       if(goHereIndex === 0) {
-        childrenContainer.prepend(itemView.el);
+        childrenContainer.prepend(childView.el);
       } else {
-        childrenContainer.children().eq(goHereIndex-1).after(itemView.el);
+        childrenContainer.children().eq(goHereIndex-1).after(childView.el);
       }
 
-      itemView.$el.data('item-cid', itemView.model.cid);
+      childView.$el.data('item-cid', childView.model.cid);
     }
   };
 

@@ -7,10 +7,10 @@ var Planbox = Planbox || {};
 
   NS.BaseProjectSectionListView = Backbone.Marionette.CollectionView.extend({
     initialize: function() {
-      this.options.itemViewOptions = this.getItemViewOptions;
+      this.options.childViewOptions = this.getChildViewOptions;
     },
 
-    getItemViewOptions: function(section, index) {
+    getChildViewOptions: function(section, index) {
       var type = section.get('type'),
           options = {parent: this};
 
@@ -29,7 +29,7 @@ var Planbox = Planbox || {};
       return options;
     },
 
-    getItemView: function(section) {
+    getChildView: function(section) {
       var type = section.get('type'),
           SectionView = this.sectionViews[type];
 
@@ -66,8 +66,8 @@ var Planbox = Planbox || {};
       'remove':  'dataChanged',
       'reorder': 'dataChanged'
     },
-    itemViewOptions: function() {
-      // Pass the parent to the itemViews in case they need to call dataChanged
+    childViewOptions: function() {
+      // Pass the parent to the childViews in case they need to call dataChanged
       return { parent: this.options.parent };
     },
     onRender: function() {
