@@ -39,7 +39,7 @@ var Planbox = Planbox || {};
 
       showShareaboutsSection: function() {
         if (this.shareaboutsView && !this.shareaboutsView.isClosed) {
-          if (this.shareaboutsView.close) { this.shareaboutsView.close(); }
+          if (this.shareaboutsView.destroy) { this.shareaboutsView.destroy(); }
           else if (this.shareaboutsView.remove) { this.shareaboutsView.remove(); }
           delete this.shareaboutsView;
         }

@@ -90,7 +90,7 @@ var Planbox = Planbox || {};
     },
     handleClose: function(evt) {
       evt.preventDefault();
-      this.close();
+      this.destroy();
     },
     handlePublish: function(evt) {
       var self = this;
@@ -520,7 +520,7 @@ var Planbox = Planbox || {};
       },
       handleClose: function(evt) {
         evt.preventDefault();
-        this.close();
+        this.destroy();
       },
       handleNext: function(evt) {
         var activeTab, nextTab;
