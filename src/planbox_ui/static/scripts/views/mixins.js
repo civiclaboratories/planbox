@@ -441,6 +441,7 @@ var Planbox = Planbox || {};
             setName = options.setName || 'places',
             downloadTemplate = Backbone.Marionette.TemplateCache.get('#download-snapshot-button-tpl'),
             snapshots = new Shareabouts.SnapshotCollection(),
+            snapshotOptions = {'include_private': true},
             snapshot;
 
         self.disableSnapshotButton(generatingSnapshotLabel);
@@ -448,12 +449,12 @@ var Planbox = Planbox || {};
         snapshots.url = datasetUrl + '/' + setName + '/snapshots';
 
         // Request a new snapshot
-        snapshot = snapshots.create({}, {
+        snapshot = snapshots.create(snapshotOptions, {
           success: function() {
 
             // Listen until the snapshot has been generated
             snapshot.waitUntilReady({
-              data: {'include_submissions': true},
+              data: snapshotOptions,
               success: function(url) {
 
                 // Show a download button when the snapshot is ready
