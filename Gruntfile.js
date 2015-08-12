@@ -277,7 +277,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.app %>/styles/components.min.css': [
-            '<%= yeoman.app %>/bower_components/leaflet/dist/leaflet.css',
+            '<%= yeoman.app %>/bower_components/leaflet/leaflet.css',
             '<%= yeoman.app %>/bower_components/shareabouts-js/src/styles/shareabouts.css'
           ],
           '<%= yeoman.app %>/styles/style.min.css': [
@@ -322,7 +322,7 @@ module.exports = function (grunt) {
             '<%= yeoman.app %>/bower_components/backbone.marionette/lib/backbone.marionette.js',
             '<%= yeoman.app %>/bower_components/backbone-relational/backbone-relational.js',
             '<%= yeoman.app %>/bower_components/swag/lib/swag.js',
-            '<%= yeoman.app %>/bower_components/leaflet/dist/leaflet-src.js',
+            '<%= yeoman.app %>/bower_components/leaflet/leaflet-src.js',
             '<%= yeoman.app %>/scripts/leaflet-imagepath-set.js',
             '<%= yeoman.app %>/bower_components/jqxdomainrequest/jQuery.XDomainRequest.js',
             '<%= yeoman.app %>/bower_components/gatekeeper/gatekeeper.js',
@@ -494,7 +494,7 @@ module.exports = function (grunt) {
       leaflet: {
         files: [{
           expand: true,
-          cwd:  '<%= yeoman.app %>/bower_components/leaflet/dist/images/',
+          cwd:  '<%= yeoman.app %>/bower_components/leaflet/images/',
           src: ['*'],
           dest: '<%= yeoman.app %>/images/'
         }]
