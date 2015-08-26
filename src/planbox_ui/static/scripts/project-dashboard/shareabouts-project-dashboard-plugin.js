@@ -42,11 +42,16 @@ var Planbox = Planbox || {};
       this.app.on('toggle:projectDashboard:tabs', _.bind(this.onTogglePanel, this));
     },
 
-    fetchShareaboutsData: function(credentials) {
-      this.credentials = credentials;
-      var addAccessToken = function(xhr) {
+    getAjaxBeforeSendFunction: function(credentials) {
+      credentials = credentials || this.credentials;
+      return function(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + credentials.access_token);
       };
+    },
+
+    fetchShareaboutsData: function(credentials) {
+      this.credentials = credentials;
+      var addAccessToken = this.getAjaxBeforeSendFunction(credentials);
       var syncWithAccessToken = function(method, model, options) {
         _.defaults(options || (options = {}), {
           beforeSend: addAccessToken

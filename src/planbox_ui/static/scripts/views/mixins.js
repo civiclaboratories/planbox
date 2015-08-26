@@ -435,6 +435,7 @@ var Planbox = Planbox || {};
     generateSnapshot: function(options) {
       if (!this.ui.generateSnapshot.hasClass('generating')) {
         var self = this,
+            getBeforeSend = self.plugin.getAjaxBeforeSendFunction,
             originalSnapshotButtonLabel = self.ui.generateSnapshot.html(),
             generatingSnapshotLabel = self.ui.generateSnapshot.attr('data-generating-label'),
             datasetUrl = options.datasetUrl,
@@ -455,6 +456,7 @@ var Planbox = Planbox || {};
             // Listen until the snapshot has been generated
             snapshot.waitUntilReady({
               data: snapshotOptions,
+              beforeSend: (getBeforeSend ? getBeforeSend.call(self.plugin) : null),
               success: function(url) {
 
                 // Show a download button when the snapshot is ready
