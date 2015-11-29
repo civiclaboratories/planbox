@@ -13072,10 +13072,10 @@ textarea.no-resize {
   display: none !important;
 }
 
-/* line 2043, main.scss */
-img.trash-icon {
-  width: 16px;
-  margin-top: 1.5em;
-  float: right;
-  clear: right;
+@media only screen and (min-width: 64.063em) {
+  /* line 2060, main.scss */
+  .project-list li .actions {
+    float: right;
+    max-width: 15em;
+  }
 }

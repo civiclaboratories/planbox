@@ -2057,9 +2057,9 @@ $scroll-nav-button-color: scale-color($button-bg-color, $lightness: $button-func
   display: none !important;
 }
 
-img.trash-icon {
-  width: 16px;
-  margin-top: 1.5em;
-  float: right;
-  clear: right;
+.project-list li .actions {
+  @media #{$large-up} {
+    float: right;
+    max-width: 15em;
+  }
 }

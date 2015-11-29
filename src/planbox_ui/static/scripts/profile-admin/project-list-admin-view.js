@@ -20,12 +20,14 @@ var Planbox = Planbox || {};
         slugForm: '.slug-form',
         slugField: '.slug-field',
         changeSlugBtn: '.change-slug',
-        cancelSlugBtn: '.cancel-slug-change'
+        cancelSlugBtn: '.cancel-slug-change',
+        deleteBtn: '.delete'
       },
       events: {
         'click @ui.changeSlugBtn': 'handleOpenSlugForm',
         'click @ui.cancelSlugBtn': 'handleCloseSlugForm',
-        'submit @ui.slugForm': 'handleSlugFormSubmit'
+        'submit @ui.slugForm': 'handleSlugFormSubmit',
+        'click @ui.deleteBtn': 'handleDelete'
       },
       handleOpenSlugForm: function(evt) {
         evt.preventDefault();
@@ -67,6 +69,28 @@ var Planbox = Planbox || {};
             }
           }
         });
+      },
+      handleDelete: function(evt) {
+        evt.preventDefault();
+        var self = this;
+        console.log('confirming');
+        this.$('.delete-confirmation')
+          .foundation('reveal', 'open')
+          .on('opened.fndtn.reveal', {view: this}, this.handleDeleteConfirmationReveal);
+      },
+      handleDeleteConfirmationReveal: function(evt) {
+        var modal = $(this);
+        var view = evt.data.view;
+        modal.find('.confirm').on('click', _.bind(view.handleConfirmDelete, view));
+      },
+      handleConfirmDelete: function(evt) {
+        evt.preventDefault();
+        var model = this.model;
+        this.$el
+          .fadeOut('slow').promise()
+          .then(function() {
+            if (model.collection) { model.destroy(); }
+          });
       },
       onRender: function() {
         this.initValidityMessages();

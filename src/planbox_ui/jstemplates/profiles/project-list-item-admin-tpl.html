@@ -1,7 +1,26 @@
-<div class="right tiny-margin-left text-right">
+<div class="clearfix">
+
+{{#if id}}
+<div id="delete{{id}}Modal" class="delete-confirmation reveal-modal small text-center" data-reveal>
+
+  <p>Are you sure you want to delete this project:</p>
+
+  <h3 class="some-margin-bottom">{{ title }}</h3>
+
+  <a href="#" data-reveal-id="delete{{id}}Modal"
+     class="left confirm alert button large less-padding radius">Yes, Delete</a>
+  <a href="#" data-reveal-id="delete{{id}}Modal"
+     class="right cancel button large less-padding radius">No, do not Delete</a>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+{{/if}}
+
+<div class="tiny-margin-left text-right actions">
   <a href="{{> url-project-edit-tpl }}" class="button small less-padding tiny-margin-bottom radius" data-log-click>Edit</a>
-  <a href="{{> url-project-tpl }}" class="button small less-padding tiny-margin-bottom radius" data-log-click>View</a><br class="show-for-small-only">
+  <a href="{{> url-project-tpl }}" class="button small less-padding tiny-margin-bottom radius" data-log-click>View</a>
   <a href="/{{ ./owner }}/{{ slug }}/dashboard/" class="button small less-padding tiny-margin-bottom radius" data-log-click>Dashboard</a>
+  <a href="#" class="alert button tiny less-padding tiny-margin-bottom radius delete">Delete</a>
 </div>
 <h3 class="no-margins">{{ title }}</h3>
 <small class="url">
@@ -17,11 +36,11 @@
   <small><span class="hide-for-small-only">civiclaboratories.com/{{ ./owner }}/</span><input type="text" id="slug" class="slug-field inline-input" value="{{ slug }}" pattern="[A-Za-z0-9-]+" data-validity-message="Please use only letters, numbers, and dashes."><span class="hide-for-small-only">/&nbsp;&nbsp;</span><button class="tiny less-padding">OK</button>&nbsp;&nbsp;<a href="#" class="cancel-slug-change alert">Cancel</a></small>
   <div data-error-attr="slug" data-error-message="That link is already used by another map. Please use a different link for each map."></div>
 </form>
-{{#if expires_at}}
 
-<a href="#" class="small less-padding tiny-margin-bottom radius"><img class="trash-icon" src="{{ static_url }}images/trash.svg"></a>
+{{#if expires_at}}
 <p class="text-small no-margins">
   {{>project-expiration-message-tpl}}
 </p>
 {{/if}}
 
+</div>
