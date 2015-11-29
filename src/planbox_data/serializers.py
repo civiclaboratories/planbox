@@ -315,12 +315,12 @@ class ProjectSerializer (SlugValidationMixin, AddRemoveModelSerializer):
 
     class Meta:
         model = models.Project
-        exclude = ('last_opened_at', 'last_opened_by', 'last_saved_at', 'last_saved_by', 'expires_at', 'payment_type',)
+        exclude = ('last_opened_at', 'last_opened_by', 'last_saved_at', 'last_saved_by', 'expires_at', 'payment_type', 'deleted',)
 
 
 class FullProjectSerializer (ProjectSerializer):
     class Meta (ProjectSerializer.Meta):
-        exclude = ('last_opened_at', 'last_opened_by', 'last_saved_at', 'last_saved_by')
+        exclude = ('last_opened_at', 'last_opened_by', 'last_saved_at', 'last_saved_by', 'deleted',)
         read_only_fields = ('expires_at', 'payment_type',)
 
 

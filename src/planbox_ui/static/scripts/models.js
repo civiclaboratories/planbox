@@ -138,6 +138,11 @@ var Planbox = Planbox || {};
       }, options));
     },
 
+    // destroy: function(options) {
+    //   if (this.collection) { this.collection.remove(); }
+    //   if (!this.isNew()) { this.save({deleted: true}); }
+    // },
+
     pageUrl: function() {
       var siteRoot = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
       return siteRoot + '/' + this.get('owner').slug + '/' + this.get('slug') + '/';

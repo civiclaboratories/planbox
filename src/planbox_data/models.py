@@ -464,6 +464,8 @@ class Project (ModelWithSlugMixin, CloneableModelMixin, TimeStampedModel):
     payments = GenericRelation('moonclerk.Payment',
         content_type_field='item_type', object_id_field='item_id')
 
+    # deleted = models.BooleanField(default=False)
+
     # NOTE: These may belong in a separate model, but are on the project for
     #       now. I think the model would be called a Highlight.
     happening_now_description = models.TextField(blank=True)
