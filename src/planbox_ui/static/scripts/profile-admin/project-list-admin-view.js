@@ -73,7 +73,6 @@ var Planbox = Planbox || {};
       handleDelete: function(evt) {
         evt.preventDefault();
         var self = this;
-        console.log('confirming');
         this.$('.delete-confirmation')
           .foundation('reveal', 'open')
           .on('opened.fndtn.reveal', {view: this}, this.handleDeleteConfirmationReveal);
