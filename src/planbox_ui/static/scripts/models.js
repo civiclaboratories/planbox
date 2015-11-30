@@ -110,6 +110,7 @@ var Planbox = Planbox || {};
       var events = this.get('events'),
           label, descr;
       events.each(function(evt) {
+        if (!evt) { return; }
         label = evt.get('label');
         descr = evt.get('description');
         if ((_.isUndefined(label) || _.isNull(label) || label.trim() === '') &&
