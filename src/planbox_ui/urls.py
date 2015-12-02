@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, url
 from .views import (
     # Static site and metadata views
-    index_view, about_view, shareabouts_view, open_source_view, map_flavors_view, help_view,
-    robots_view, sitemap_view, project_flavor_view,
+    index_view, about_view, shareabouts_view, open_source_view, map_flavors_view,
+    help_view, robots_view, sitemap_view, project_flavor_view, map_markers_view,
 
     # User authentication views
     signup_view, signin_view, password_reset_view, password_change_view,
@@ -46,6 +46,7 @@ urlpatterns = patterns('',
     url(r'^shareabouts/success$', shareabouts_auth_success_view, name='app-shareabouts-success'),
     url(r'^shareabouts/error$', shareabouts_auth_error_view, name='app-shareabouts-error'),
     url(r'^open-source/$', open_source_view, name='app-open-source'),
+    url(r'^map-markers/$', map_markers_view, name='app-map-markers'),
     url(r'^map-flavors/$', map_flavors_view, name='app-map-flavors'),
     url(r'^map-flavors/(?P<slug>[^/]+)/$', project_flavor_view, name='app-project-flavor'),
     url(r'^plan-expired/$', project_expired_view, name='app-plan-expired'),

@@ -705,6 +705,33 @@ section, footer {
 
 
 /*--------------------------------------------------
+  Product: Shareabouts Markers
+--------------------------------------------------*/
+
+.focused-marker-grid {
+  > span {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  label {
+    font-size: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  img {
+    width: 75px;
+  }
+
+  margin-bottom: 1rem;
+}
+
+
+/*--------------------------------------------------
   Project Layout
 --------------------------------------------------*/
 

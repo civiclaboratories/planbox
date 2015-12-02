@@ -236,6 +236,9 @@ class OpenSourceView (AppMixin, TemplateView):
 class MapFlavorsView (AppMixin, TemplateView):
     template_name = 'map-flavors.html'
 
+class MapMarkersView (AppMixin, TemplateView):
+    template_name = 'map-markers.html'
+
 class ProjectFlavorView (AppMixin, TemplateView):
     template_name = 'flavor.html'
 
@@ -793,6 +796,7 @@ shareabouts_auth_success_view = ShareaboutsAuthSuccessView.as_view()
 shareabouts_auth_error_view = ShareaboutsAuthErrorView.as_view()
 open_source_view = OpenSourceView.as_view()
 map_flavors_view = MapFlavorsView.as_view()
+map_markers_view = MapMarkersView.as_view()
 project_flavor_view = ProjectFlavorView.as_view()
 project_expired_view = ExpiredProjectView.as_view()
 
