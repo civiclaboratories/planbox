@@ -60,5 +60,7 @@ newenv/
 newenv?/
 node_modules/
 db.sqlite3
-.env
+.env*
 staticfiles/
+TODO
+security/
